@@ -38,14 +38,12 @@ void obtemAtleta(int num,  tAtleta *atleta){
     }
 */
 
-// Função para trocar dois atletas
 void trocaAtletas(tAtleta *a, tAtleta *b) {
     tAtleta temp = *a;
     *a = *b;
     *b = temp;
 }
 
-// Bubble sort for athletes based on time (ascending) and name (alphabetical) if times are equal
 void bubbleSortAtletas(tAtleta *atletas, int n) {
     int i, j;
     for (i = 0; i < n-1; i++) {

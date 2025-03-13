@@ -113,19 +113,3 @@ void horario(int tempo, int *horas, int *minutos) {
 	divisaoInteira(tempo,60, horas,minutos);
 	return;
 }
-
-void troca(int *a, int *b){ 
-    int temp = *a; 
-    *a = *b; 
-    *b = temp; 
-} 
-
-// Original bubble sort function for integer arrays
-void bubbleSort(int *v, int n){ 
-    if (n < 1)return; 
- 
-    for (int i=0; i<n; i++) 
-        if (v[i] > v[i+1]) 
-            troca(&v[i], &v[i+1]);  
-    bubbleSort(v, n-1); 
-}

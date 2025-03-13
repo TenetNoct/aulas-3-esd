@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 #define TAM 3
+
+
+
 
 void horario(int tempo, int *horas, int *minutos);
 
@@ -61,6 +65,7 @@ void bubbleSortAtletas(tAtleta *atletas, int n) {
 }
 
 int main(void) {
+    setlocale(LC_ALL, "Portuguese");
 	tAtleta vAtletas[TAM];
 
 	int tempo_horas, tempo_minutos;

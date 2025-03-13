@@ -5,9 +5,6 @@
 
 #define TAM 3
 
-
-
-
 void horario(int tempo, int *horas, int *minutos);
 
 struct tat{

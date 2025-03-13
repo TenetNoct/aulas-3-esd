@@ -16,7 +16,7 @@ typedef struct tat tAtleta;
 void obtemAtleta(int num,  tAtleta *atleta){
 
     printf("\nDigite o código do %dº atleta:",num);
-	scanf("%i",&(*atleta)->cod);  // (*atleta).cod   pode ser escrito como atleta->cod
+	scanf("%i",&atleta->cod);  // (*atleta).cod   pode ser escrito como atleta->cod
 	
     printf("\n Digite o nome do atleta:");
 	scanf("%s",&atleta->nome);
@@ -48,11 +48,9 @@ void bubbleSortAtletas(tAtleta *atletas, int n) {
     int i, j;
     for (i = 0; i < n-1; i++) {
         for (j = 0; j < n-i-1; j++) {
-            // Compare times first
             if (atletas[j].tempo > atletas[j+1].tempo) {
                 trocaAtletas(&atletas[j], &atletas[j+1]);
             }
-            // If times are equal, compare names alphabetically
             else if (atletas[j].tempo == atletas[j+1].tempo) {
                 if (strcmp(atletas[j].nome, atletas[j+1].nome) > 0) {
                     trocaAtletas(&atletas[j], &atletas[j+1]);
@@ -77,10 +75,8 @@ int main(void) {
 	    printf("\nTempo do %dº atleta foi %02i:%02ih", contador + 1, tempo_horas,tempo_minutos);
 	}
     
-    // Sort athletes by time and name
     bubbleSortAtletas(vAtletas, TAM);
     
-    // Display sorted athletes
     printf("\n\nAtletas ordenados por tempo (menor para maior) e nome (ordem alfabética):");
     for(contador=0;contador<TAM;contador++){
         horario(vAtletas[contador].tempo, &tempo_horas, &tempo_minutos);

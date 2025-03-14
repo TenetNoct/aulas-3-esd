@@ -20,7 +20,7 @@ void obtemAtleta(int num,  tAtleta *atleta){
 	scanf("%i",&atleta->cod);  // (*atleta).cod   pode ser escrito como atleta->cod
 	
     printf("\n Digite o nome do atleta:");
-	scanf("%s",&atleta->nome);
+	scanf("%s",atleta->nome);
 
 	printf("\nDigite o tempo do %dº atleta:",num);
 	scanf("%i",&atleta->tempo);

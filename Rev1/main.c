@@ -19,7 +19,7 @@ void obtemAtleta(int num,  tAtleta *atleta){
     printf("\nDigite o código do %dº atleta:",num);
 	scanf("%i",&atleta->cod);  // (*atleta).cod   pode ser escrito como atleta->cod
 	
-    printf("\n Digite o nome do atleta:");
+    printf("\nDigite o nome do atleta:");
 	scanf("%s",atleta->nome);
 
 	printf("\nDigite o tempo do %dº atleta:",num);
@@ -49,13 +49,8 @@ void bubbleSortAtletas(tAtleta *atletas, int n) {
     int i, j;
     for (i = 0; i < n-1; i++) {
         for (j = 0; j < n-i-1; j++) {
-            if (atletas[j].tempo > atletas[j+1].tempo) {
+            if (atletas[j].tempo > atletas[j+1].tempo || atletas[j].tempo == atletas[j+1].tempo) {
                 trocaAtletas(&atletas[j], &atletas[j+1]);
-            }
-            else if (atletas[j].tempo == atletas[j+1].tempo) {
-                if (strcmp(atletas[j].nome, atletas[j+1].nome) > 0) {
-                    trocaAtletas(&atletas[j], &atletas[j+1]);
-                }
             }
         }
     }
@@ -82,13 +77,9 @@ int main(void) {
     printf("\n\nAtletas ordenados por tempo (menor para maior) e nome (ordem alfabética):");
     for(contador=0;contador<TAM;contador++){
         horario(vAtletas[contador].tempo, &tempo_horas, &tempo_minutos);
-        printf("\nAtleta: %s, Código: %d, Tempo: %02i:%02ih", 
-               vAtletas[contador].nome, 
-               vAtletas[contador].cod,
-               tempo_horas, 
-               tempo_minutos);
+        printf("\nAtleta: %s, Código: %d, Tempo: %02i:%02ih", vAtletas[contador].nome, vAtletas[contador].cod, tempo_horas, tempo_minutos);    
     }
-
+    printf("\n");
 	return 0;
 }
 
